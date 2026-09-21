@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #242424;
+    background: #f8f8f8;
+}
+
+
+/* 左侧彩色竖条 */
+
+.color-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 55px;
+    height: 100vh;
+
+    background: #fb8926;
+}
+
+
+/* 整个 journal */
+
+.journal {
+    max-width: 1100px;
+
+    margin-left: 55px;
+    padding: 40px 70px 100px 70px;
+}
+
+
+/* 顶部小信息 */
+
+.top-info {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: #777;
+}
+
+
+/* 标题区域 */
+
+.intro {
+    margin-top: 70px;
+}
+
+.intro h1 {
+    margin: 0;
+
+    font-size: 58px;
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    max-width: 500px;
+}
+
+
+/* title 下方信息 */
+
+.project-info {
+    display: flex;
+    gap: 80px;
+
+    margin-top: 50px;
+}
+
+.project-info div {
+    min-width: 120px;
+}
+
+.project-info span {
+    font-size: 11px;
+    color: #999;
+}
+
+.project-info p {
+    margin-top: 8px;
+
+    font-size: 14px;
+    line-height: 1.4;
+
+    font-weight: 600;
+}
+
+
+/* journal 正文 */
+
+.journal-content {
+    max-width: 760px;
+
+    margin-top: 110px;
+}
+
+.journal-content h2 {
+    margin-top: 45px;
+    margin-bottom: 15px;
+
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.journal-content p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+
+/* 图片区域 */
+
+.image-section {
+    margin-top: 60px;
+}
+
+
+/* 5张一行 */
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+
+/* 小图片 */
+
+.image-gallery img {
+    width: 100%;
+    height: 130px;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+
+/* 鼠标放上去稍微变暗 */
+
+.image-gallery img:hover {
+    opacity: 0.7;
+}
+
+
+/* 大图背景 */
+
+.lightbox {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+/* 大图 */
+
+.lightbox-image {
+    max-width: 85%;
+    max-height: 85%;
+
+    object-fit: contain;
+}
+
+
+/* 关闭按钮 */
+
+.close {
+    position: absolute;
+
+    top: 25px;
+    right: 40px;
+
+    color: white;
+
+    font-size: 40px;
+    font-weight: 300;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   INDEX PAGE
+   ========================= */
+
+
+.home {
+    max-width: 1100px;
+
+    margin-left: 55px;
+    padding: 40px 70px 100px 70px;
+}
+
+
+/* 首页大标题区域 */
+
+.home-intro {
+    margin-top: 90px;
+}
+
+
+.home-intro h1 {
+    margin: 0;
+
+    font-size: 70px;
+    line-height: 1.05;
+
+    font-weight: 700;
+}
+
+
+.home-intro p {
+    margin-top: 30px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+/* Journal 列表 */
+
+.journal-list {
+    max-width: 750px;
+
+    margin-top: 110px;
+}
+
+
+/* 每一个 journal */
+
+.journal-link {
+    display: grid;
+
+    grid-template-columns: 80px 1fr 40px;
+
+    align-items: center;
+
+    padding: 25px 0;
+
+    border-top: 1px solid #cccccc;
+
+    text-decoration: none;
+
+    color: #242424;
+
+    transition: padding 0.2s ease;
+}
+
+
+/* 最后一条下面也加线 */
+
+.journal-link:last-child {
+    border-bottom: 1px solid #cccccc;
+}
+
+
+/* journal 数字 */
+
+.journal-number {
+    font-size: 13px;
+
+    color: #999;
+}
+
+
+/* journal 标题 */
+
+.journal-title {
+    font-size: 26px;
+}
+
+
+/* 右边箭头 */
+
+.journal-arrow {
+    font-size: 24px;
+
+    text-align: right;
+}
+
+
+/* hover 效果 */
+
+.journal-link:hover {
+    padding-left: 12px;
+}
+
+
+.home-link {
+    text-decoration: none;
+    color: inherit;
+
+    transition: opacity 0.2s ease;
+}
+
+.home-link:hover {
+    opacity: 0.5;
+}
+
+
+/* 手机 */
+
+@media (max-width: 700px) {
+
+    .home {
+        margin-left: 18px;
+
+        padding: 30px 25px 80px 30px;
+    }
+
+
+    .home-intro {
+        margin-top: 70px;
+    }
+
+
+    .home-intro h1 {
+        font-size: 48px;
+    }
+
+
+    .journal-list {
+        margin-top: 70px;
+    }
+
+
+    .journal-link {
+        grid-template-columns: 50px 1fr 30px;
+
+        padding: 20px 0;
+    }
+
+
+    .journal-title {
+        font-size: 21px;
+    }
+
+}
+
+
+/* 手机 */
+
+@media (max-width: 700px) {
+
+    .color-bar {
+        width: 18px;
+    }
+
+    .journal {
+        margin-left: 18px;
+        padding: 30px 25px 80px 30px;
+    }
+
+    .intro {
+        margin-top: 60px;
+    }
+
+    .intro h1 {
+        font-size: 42px;
+    }
+
+    .project-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .journal-content {
+        margin-top: 70px;
+    }
+
+}
