@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Journal</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="color-bar"></div>
+
+    <main class="journal">
+
+        <header class="top-info">
+            <a href="../index.html" class="home-link">
+                CART 470<br>
+                Design Journal
+            </a>
+
+            <div>
+                Fall 2026
+            </div>
+        </header>
+
+
+        <section class="intro">
+
+            <h1>
+                Week 10<br>
+                Design Journal
+            </h1>
+
+            <div class="project-info">
+
+                <div>
+                    <span>Name</span>
+                    <p>Junming He</p>
+                </div>
+
+                <div>
+                    <span>Project</span>
+                    <p>Hochelaga Archipelago</p>
+                </div>
+
+                <div>
+                    <span>Date</span>
+                    <p>November 24, 2026</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="journal-content">
+
+            <h2>What I Worked On</h2>
+
+            <p>
+                This week, I mainly worked on improving the audio in my Opening based on the feedback we received during
+                our last client
+                meeting.
+
+                The client mentioned that the background audio should not suddenly stop when the Opening animation ends
+                and the
+                introduction text appears. Instead, the sound should continue playing until users enter the main map.
+            </p>
+            <p>
+                I agreed with this feedback because I think suddenly cutting off the audio breaks the continuity of the
+                experience,
+                especially when users are still reading the introduction.
+
+                Therefore, I focused on solving two problems this week: which sounds should continue playing after the
+                animation, and
+                how to make them loop naturally without users noticing the repetition.
+            </p>
+
+
+
+            <h2>Choosing the Background Sounds</h2>
+            <p>
+                In my current Opening, I use five different sounds: Bell, Wind, Seagull, Car Passing, and River.
+
+                When choosing the background sounds for the introduction text, I did not want to suddenly introduce a
+                completely new
+                sound that users had never heard during the animation. I wanted the transition from the animation to the
+                introduction to
+                feel consistent, so I decided to choose from the existing sounds.
+
+                After comparing them, I decided to keep River and Wind.
+            </p>
+            <p>
+                The main reason is that Bell, Seagull, and Car Passing are relatively short sounds with noticeable
+                characteristics. Some
+                of them also have relatively high pitches. I think these sounds work well when they appear at specific
+                moments during
+                the animation, but repeatedly playing them could become tiring and distract users while they are
+                reading.
+
+                In comparison, River and Wind are more continuous environmental sounds, making them more suitable for
+                longer background
+                playback.
+            </p>
+            <p>
+                Another reason for choosing River is its connection to the content of the Opening. The first sentence of
+                the
+                introduction says:
+            </p>
+            <p>
+                "Where the St. Lawrence and Ottawa rivers meet, hundreds of islands and islets form the Hochelaga
+                Archipelago."
+            </p>
+            <p>
+                Since rivers are an important part of the Hochelaga Archipelago, I think continuing the sound of flowing
+                water while
+                users read the introduction helps strengthen the connection between the text, the map, and the audio.
+            </p>
+
+
+            <h2>Adjusting the Sound Balance</h2>
+            <p>
+                After deciding to keep River and Wind, I started adjusting the volume balance between them.
+            </p>
+
+            <p>
+                At first, I wanted River to be the main background sound, with Wind only serving as a subtle supporting
+                sound.
+                Therefore, I set River's volume relatively high and kept Wind much quieter.
+
+                However, during testing, I noticed that River has a very noticeable sound texture, which easily covers
+                up Wind. Even
+                though both sounds were playing at the same time, I could barely hear Wind.
+
+                This was not exactly what I wanted, since my original idea was to use both sounds to create a richer
+                environmental
+                atmosphere.
+            </p>
+            <p>
+                Therefore, I made another adjustment by slightly lowering River's volume and increasing Wind's volume,
+                bringing their
+                levels closer together.
+
+                I still wanted River to be the sound that users noticed first, but Wind should also be audible rather
+                than becoming an
+                almost unnoticeable background element.
+
+                After these adjustments, I felt that the two sounds worked better together. River remained the main
+                sound, while Wind
+                added another layer to the overall atmosphere.
+            </p>
+
+
+
+            <h2>Creating a Seamless Audio Loop</h2>
+            <p>
+                Another problem I needed to solve was how to keep the sounds playing continuously.
+            </p>
+
+            <p>
+                Initially, I considered finding or creating a longer audio file that was already designed to loop.
+                However, I realized
+                that this approach could create two problems.
+
+                First, longer audio files usually mean larger file sizes. Since our group uses GitHub to manage and
+                share the project, I
+                needed to consider how large audio files might affect uploading and managing the project.
+
+                Second, even if I found a new audio file, it might not have the same feeling as the sounds I had already
+                selected and
+                tested. I did not want to replace the existing audio just to make looping possible.
+            </p>
+            <p>
+                Instead, I decided to experiment with looping the existing audio files.
+
+                My idea was to start playing the next copy of the same audio before the previous one finished, allowing
+                the two clips to
+                overlap. During the overlapping section, the first clip would gradually fade out while the second one
+                faded in.
+
+                I first tested this method in Premiere Pro. I found that the beginning and ending of the River audio
+                could overlap quite
+                naturally. By adding fade-in and fade-out effects, the transition between the two clips became much less
+                noticeable.
+            </p>
+            <p>
+                After confirming that this approach could work, I tried implementing it in code using a Crossfade Loop.
+
+                This allowed River and Wind to repeat continuously, with their volumes gradually changing during each
+                transition.
+
+                After testing, I found that the result was quite close to what I wanted. The transitions between the
+                audio clips were
+                not very noticeable, and I could achieve continuous playback without adding new, larger audio files.
+            </p>
+            <p>
+                Now, when the Opening animation ends and the introduction text appears, River and Wind no longer stop
+                suddenly. Instead,
+                they transition into quieter background sounds and continue playing until users enter the main map.
+            </p>
+
+
+
+            <div class="lightbox" id="lightbox">
+                <span class="close">&times;</span>
+                <img class="lightbox-image" id="lightbox-image" alt="">
+            </div>
+
+
+
+
+
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
